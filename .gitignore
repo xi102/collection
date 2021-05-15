@@ -23,3 +23,6 @@ upload/*
 log/
 main
 xi102
+
+.idea
+.vscode
