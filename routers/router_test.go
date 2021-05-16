@@ -1,4 +1,4 @@
-package main
+package routers
 
 import (
 	"net/http"
@@ -11,7 +11,9 @@ import (
 func TestInitRouter(t *testing.T) {
 	router := InitRouter()
 	w := httptest.NewRecorder()
-	req, _ := http.NewRequest("GET", "/files/", nil)
+
+	req, _ := http.NewRequest("GET", "/", nil)
 	router.ServeHTTP(w, req)
 	assert.Equal(t, http.StatusOK, w.Code)
+	assert.Equal(t, "{\"message\":\"hello,xi102\"}", w.Body.String())
 }
