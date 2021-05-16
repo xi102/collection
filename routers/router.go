@@ -5,6 +5,7 @@ import (
 	"net/http"
 	"path/filepath"
 
+	"github.com/gin-contrib/static"
 	"github.com/gin-gonic/gin"
 )
 
@@ -18,7 +19,12 @@ func InitRouter() *gin.Engine {
 		})
 	})
 
-	router.Static("/index", "./public")
+	// router.Static("/index", "./public")
+	router.Use(static.Serve("/index", static.LocalFile("./frontend/dist", false)))
+	router.NoRoute(func(c *gin.Context) {
+		c.File("./frontend/dist/index.html")
+	})
+
 	router.StaticFS("/files", http.Dir("./upload"))
 	router.POST("/upload/", func(c *gin.Context) {
 		name := c.PostForm("name")
