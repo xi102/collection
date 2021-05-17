@@ -34,7 +34,9 @@ make build
 
 后端：
  - gin
- - jwt-go
+ - jwt-go, 用于登陆鉴权
+ - gin-contrib/cors，gin的官方middleware,用于配置CORS
+ - xorm，
 
 前端：
 
