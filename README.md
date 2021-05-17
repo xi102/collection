@@ -33,15 +33,17 @@ make build
 ## 库和框架
 
 后端：
- - gin
- - jwt-go, 用于登陆鉴权
- - gin-contrib/cors，gin的官方middleware,用于配置CORS
- - xorm，
+
+- gin
+- jwt-go, 用于登陆鉴权
+- gin-contrib/cors，gin的官方middleware,用于配置CORS
+- xorm，用于orm
+- logrus、rotatelogs, 用于日志处理
 
 前端：
 
- - vue
- - vuetify
+- vue
+- vuetify
 
 测试：
 
