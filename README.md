@@ -24,16 +24,16 @@
 
 ## 开发
 
-### 前端
-
 ```bash
-cd frontend
-yarn install && yarn serve
+git clone https://github.com/xi102/collection
 ```
 
 ### 后端
 
+需要安装go, 在根目录
+
 ```bash
+go mod tidy
 go run main.go
 ```
 
@@ -41,6 +41,15 @@ go run main.go
 
 ```bash
 make run
+```
+
+### 前端
+
+需要安装nodejs、vue-cli、yarn/npm
+
+```bash
+cd frontend
+yarn install && yarn serve
 ```
 
 ## 部署
