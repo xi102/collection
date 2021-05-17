@@ -27,18 +27,34 @@
 请看[Makefile](./Makefile)
 
 ```bash
+make run
+```
+
+## 部署
+
+```bash
+cd frontend && yarn install
+yarn build
+```
+
+于是你有了前端静态文件
+
+```bash
 make build
 ```
+
+直接运行编译好的二进制文件即可
 
 ## 库和框架
 
 后端：
 
-- gin
+- gin 用来处理路由和网络请求，自带的orm和log等都没用
 - jwt-go, 用于登陆鉴权
 - gin-contrib/cors，gin的官方middleware,用于配置CORS
 - xorm，用于orm
 - logrus、rotatelogs, 用于日志处理
+- viper, 功能很多的一个用来读取配置文件的库，这里只是简单读取一下toml配置
 
 前端：
 
