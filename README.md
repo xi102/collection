@@ -24,13 +24,32 @@
 
 ## 开发
 
-请看[Makefile](./Makefile)
+### 前端
+
+```bash
+cd frontend
+yarn install && yarn serve
+```
+
+### 后端
+
+```bash
+go run main.go
+```
+
+或者用[Makefile](./Makefile)
 
 ```bash
 make run
 ```
 
 ## 部署
+
+复制一份配置文件并改名`config.toml`，修改数据库密码端口等配置信息
+
+```bash
+cp conf/default.toml config.toml
+```
 
 ```bash
 cd frontend && yarn install
@@ -41,9 +60,15 @@ yarn build
 
 ```bash
 make build
+#或者直接
+go build -o collection main.go
 ```
 
 直接运行编译好的二进制文件即可
+
+```bash
+./collection
+```
 
 ## 库和框架
 
