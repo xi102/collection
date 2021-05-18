@@ -1,8 +1,6 @@
 <template>
     <div class="login">
-        <v-container  class="loginOverlay">
-          <v-layout  align-center justify-center>
-            <v-flex xs12 sm8>
+        
                 <v-card>                    
                     <v-card-text class="pt-4">
                         <v-form ref="form">
@@ -33,9 +31,7 @@
                         <v-btn outlined color="black"  to="/logon" class="green white--text" >注册</v-btn>
                     </v-card-actions>
                 </v-card>
-            </v-flex>
-          </v-layout>
-       </v-container>
+            
        <v-snackbar
         v-model="snackbar"
         :vertical="vertical"
@@ -102,7 +98,7 @@ export default {
 <style scoped>
 .login {
     height: 100vh;
-    background-color: #5DD5C8;
+    background-color: #FFFFFF;
 }
 h4 {
     font-size: 1em !important;
@@ -111,7 +107,7 @@ h4 {
 }
 .v-card {
     text-align: center;
-    margin: 1em;
+    margin: 2em;
 }
 .v-card__title {
     justify-content: center;
@@ -120,7 +116,7 @@ h4 {
     width: 100%;
 }
 .v-card {
-    padding: 1em;
+    padding: 2em;
 }
 .green {
     margin-bottom: 1em;
