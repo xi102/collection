@@ -1,9 +1,15 @@
 <template>
-  <div>
-    <v-flex>
-      <v-file-input show-size counter chips multiple label="Arquivo Geral" ref="myfile" v-model="files"></v-file-input>
-      <v-btn color="primary" text @click="submitFiles">test</v-btn>
-    </v-flex>
+  <div style="margin:20px;">
+    <v-file-input 
+      show-size 
+      counter 
+      chips 
+      multiple 
+      label="点击此处选择文件" 
+      ref="myfile" 
+      v-model="files"
+    />
+    <v-btn text @click="submitFiles"><h3>提交上传</h3></v-btn>
   </div>
 </template>
 

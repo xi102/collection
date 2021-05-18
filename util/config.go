@@ -5,35 +5,37 @@
 package util
 
 import (
-	"fmt"
 	"log"
 
 	"github.com/spf13/viper"
 )
 
-func Config() {
+type MySQLConfig struct {
+	host     string
+	port     int
+	user     string
+	password string
+	database string
+}
+type DBConfig struct {
+	MySQL MySQLConfig
+}
+
+func Config() DBConfig {
+	//读取配置的viper工具定义
 	viper.SetConfigName("config")
 	viper.SetConfigType("toml")
 	viper.AddConfigPath("./conf")
+
+	//读取配置失败处理
 	err := viper.ReadInConfig()
 	if err != nil {
 		log.Fatalf("read config failed: %v", err)
 	}
 
-	fmt.Println("protocols: ", viper.GetStringSlice("server.protocols"))
-	fmt.Println("ports: ", viper.GetIntSlice("server.ports"))
-	fmt.Println("timeout: ", viper.GetDuration("server.timeout"))
+	//读取
+	var c DBConfig
+	viper.Unmarshal(&c)
 
-	fmt.Println("mysql ip: ", viper.GetString("mysql.ip"))
-	fmt.Println("mysql port: ", viper.GetInt("mysql.port"))
-
-	if viper.IsSet("redis.port") {
-		fmt.Println("redis.port is set")
-	} else {
-		fmt.Println("redis.port is not set")
-	}
-
-	fmt.Println("mysql settings: ", viper.GetStringMap("mysql"))
-	fmt.Println("redis settings: ", viper.GetStringMap("redis"))
-	fmt.Println("all settings: ", viper.AllSettings())
+	return c
 }
