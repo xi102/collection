@@ -39,7 +39,7 @@ export default {
                 console.log(formData.getAll("file"))
                 console.log(this.files)
                 //POST请求向后端用form方式传文件
-                axios.post('/upload', formData)
+                axios.post('/upload/', formData)
                       .then( response => {
                                 console.log('Success!')
                                 console.log({response})
