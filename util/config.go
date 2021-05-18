@@ -5,6 +5,7 @@
 package util
 
 import (
+	"fmt"
 	"log"
 
 	"github.com/spf13/viper"
@@ -36,6 +37,7 @@ func Config() DBConfig {
 	//读取
 	var c DBConfig
 	viper.Unmarshal(&c)
+	fmt.Println(c.MySQL)
 
 	return c
 }
