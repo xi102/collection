@@ -12,7 +12,7 @@ func Cors() gin.HandlerFunc {
 		cors.Config{
 			AllowOrigins:     []string{"http://localhost:3000"},
 			AllowMethods:     []string{"PUT", "PATCH", "GET", "POST", "DELETE", "OPTIONS"},
-			AllowHeaders:     []string{"Ori gin"},
+			AllowHeaders:     []string{"*"},
 			ExposeHeaders:    []string{"Content-Length", "text/plain", "Authorization", "Content-Type"},
 			AllowCredentials: true,
 			AllowOriginFunc: func(origin string) bool {

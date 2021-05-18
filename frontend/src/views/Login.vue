@@ -54,7 +54,7 @@
     </v-snackbar>
     </div>
 </template>
-
+<!-- 
 <script>
 import { login } from '@/api/user'
 import { setToken,setUserName,getAvatarTitle } from '@/utils/auth'
@@ -98,7 +98,7 @@ export default {
     }
 }
 </script>
-
+ -->
 <style scoped>
 .login {
     height: 100vh;
