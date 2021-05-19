@@ -80,4 +80,7 @@ h4 {
 .v-input {
     padding-bottom: 2em;
 }
+.container {
+    max-width: 600px;
+}
 </style>

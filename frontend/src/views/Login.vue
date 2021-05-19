@@ -120,6 +120,8 @@ h4 {
 }
 .v-card {
     padding: 2em;
+    margin: 4em;
+    margin-top: 6em;
 }
 .green {
     margin-bottom: 1em;
@@ -127,5 +129,8 @@ h4 {
 .create {
     text-transform: capitalize;
     margin-bottom: 1em;
+}
+.container {
+    max-width: 600px;
 }
 </style>

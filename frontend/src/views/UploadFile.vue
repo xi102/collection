@@ -1,19 +1,21 @@
 <template>
   <div>
-    <h1 style="padding-top:40px;padding-bottom:20px;">师兄师姐们把文件放到这里来</h1>
-    <div style="margin:20px;">
-        <v-file-input 
-        filled
-        show-size 
-        counter 
-        chips 
-        multiple 
-        label="点击此处选择文件" 
-        ref="myfile" 
-        v-model="files"
-        />
-        <v-btn text @click="submitFiles"><h3>提交上传</h3></v-btn>
-    </div>
+    <h1 style="padding-top:120px;padding-bottom:20px;">师兄师姐们把文件放到这里来</h1>
+    <v-container>
+        <div style="margin:60px;">
+            <v-file-input 
+            filled
+            show-size 
+            counter 
+            chips 
+            multiple 
+            label="点击此处选择文件" 
+            ref="myfile" 
+            v-model="files"
+            />
+            <v-btn text @click="submitFiles" class="mt-10"><h3>提交上传</h3></v-btn>
+        </div>
+    </v-container>
   </div>
 </template>
 
@@ -56,3 +58,8 @@ export default {
 }
 
 </script>
+<style scoped>
+.container {
+    max-width: 800px;
+}
+</style>
