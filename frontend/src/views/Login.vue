@@ -110,10 +110,7 @@ h4 {
 .v-card {
     text-align: center;
     margin: 2em;
-<<<<<<< HEAD
-=======
     border-radius: 30px;
->>>>>>> error-vue-router
 }
 .v-card__title {
     justify-content: center;
