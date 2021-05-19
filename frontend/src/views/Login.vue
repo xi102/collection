@@ -1,6 +1,7 @@
 <template>
     <div class="login">
-        
+        <v-container  class="loginOverlay">
+          
                 <v-card>                    
                     <v-card-text class="pt-4">
                         <v-form ref="form">
@@ -32,6 +33,7 @@
                     </v-card-actions>
                 </v-card>
             
+       </v-container>
        <v-snackbar
         v-model="snackbar"
         :vertical="vertical"
@@ -108,6 +110,10 @@ h4 {
 .v-card {
     text-align: center;
     margin: 2em;
+<<<<<<< HEAD
+=======
+    border-radius: 30px;
+>>>>>>> error-vue-router
 }
 .v-card__title {
     justify-content: center;
