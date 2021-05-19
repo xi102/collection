@@ -26,3 +26,5 @@ xi102
 
 .idea
 .vscode
+
+conf/config.toml
