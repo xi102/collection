@@ -29,7 +29,7 @@
                         <h5>没有账号?</h5>
                     </v-card-title>
                     <v-card-actions>
-                        <v-btn outlined color="black"  to="/logon" class="green white--text" >注册</v-btn>
+                        <v-btn outlined color="black"  to="/register" class="green white--text" >注册</v-btn>
                     </v-card-actions>
                 </v-card>
             
@@ -100,7 +100,7 @@ export default {
 <style scoped>
 .login {
     height: 100vh;
-    background-color: #FFFFFF;
+    background-color: #F0F0F0;
 }
 h4 {
     font-size: 1em !important;
@@ -110,7 +110,7 @@ h4 {
 .v-card {
     text-align: center;
     margin: 2em;
-    border-radius: 30px;
+    border-radius: 30px !important;
 }
 .v-card__title {
     justify-content: center;

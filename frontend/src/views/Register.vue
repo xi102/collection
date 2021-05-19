@@ -1,0 +1,83 @@
+<template>
+    <div class="login">
+        <v-container  class="loginOverlay">
+          
+                <v-card>                    
+                    <v-card-text class="pt-4">
+                        <v-form ref="form">
+                            <v-text-field
+                            label="账号"
+                            v-model="username"
+                            required
+                            append-icon="fa-info-circle"
+                            ></v-text-field>
+                            <v-text-field
+                            label="密码"
+                            v-model="password"
+                            :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
+                            :type="show1 ? 'text' : 'password'"
+                            required
+                            ></v-text-field>
+                        </v-form>
+                    </v-card-text>
+                    <v-card-actions>
+                        <v-btn @click="submit" class="green white--text">现在注册</v-btn>
+                    </v-card-actions>
+                </v-card>
+            
+       </v-container>
+       <v-snackbar
+        v-model="snackbar"
+        :vertical="vertical"
+        >
+      {{ message }}
+      <template v-slot:action="{ attrs }">
+        <v-btn
+          color="indigo"
+          text
+          v-bind="attrs"
+          @click="snackbar = false"
+        >
+          关闭
+        </v-btn>
+      </template>
+    </v-snackbar>
+    </div>
+</template>
+
+<style scoped>
+.login {
+    height: 100vh;
+    background-color: #ABDFCF;
+}
+h4 {
+    font-size: 1em !important;
+    padding: 1em;
+    color: black;
+}
+.v-card {
+    text-align: center;
+    margin: 4em;
+    margin-top: 6em;
+    border-radius: 30px;
+}
+.v-card__title {
+    justify-content: center;
+}
+.v-btn {
+    width: 100%;
+}
+.v-card {
+    padding: 2em;
+}
+.green {
+    margin-bottom: 1em;
+}
+.create {
+    text-transform: capitalize;
+    margin-bottom: 1em;
+}
+.v-input {
+    padding-bottom: 2em;
+}
+</style>

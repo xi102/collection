@@ -5,7 +5,7 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
       <router-link to="/testfiles">Upload Files</router-link> |
-      <router-link to="/files_show">Files</router-link> |
+      <!-- <router-link to="/files_show">Files</router-link> | -->
       <router-link to="/login">Login</router-link>
     </div>
   </div>
@@ -36,9 +36,7 @@ export default {
       color: #42b983;
     }
   }
-  position: absolute;
-  width: 100%;
-  align-items: center;
+  
   bottom: 0;
 }
 </style>

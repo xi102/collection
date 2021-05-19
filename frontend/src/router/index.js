@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+//import { component } from 'vue/types/umd'
 import Home from '../views/Home.vue'
 
 Vue.use(VueRouter)
@@ -28,32 +29,39 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    component: () => import('../Layout/layout.vue'),
+    children: [
+      {
+        path:'/about',
+        component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+      }
+    ]
   },
   {
     path: '/testfiles',
     name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/UploadFile.vue')
+    component: () => import('../Layout/layout.vue'),
+    children: [
+      {
+        path:'/testfiles',
+        component: () => import(/* webpackChunkName: "about" */ '../views/UploadFile.vue')
+      }
+    ]
   },
   {
     path: '/login',
     name: 'Login',
-    redirct: '/login/ll',
-    component: () => import('../Layout/layout.vue'),
-    children: [{
-      name: 'login2',
-      path: '/ll',
-      component: () => import(/* webpackChunkName: "about" */ '../views/Login.vue')
-    }]
-
+    component: () => import(/* webpackChunkName: "about" */ '../views/Login.vue')
   },
   {
     path: '/files_show',
     name: 'Files',
     component: () => import(/* webpackChunkName: "about" */ '../views/Files.vue')
+  },
+  {
+    path: '/register',
+    name: 'Register',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Register.vue')
   }
 ]
 
