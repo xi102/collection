@@ -11,33 +11,47 @@ import (
 	"github.com/spf13/viper"
 )
 
-type MySQLConfig struct {
-	host     string
-	port     int
-	user     string
-	password string
-	database string
-}
-type DBConfig struct {
-	MySQL MySQLConfig
-}
+var (
+	APP_NAME       string
+	LOG_LEVEL      string
+	MYSQL_IP       string
+	MYSQL_PORT     string
+	MYSQL_USER     string
+	MYSQL_PASSWORD string
+	MYSQL_DATABASE string
+	REDIS_IP       string
+	REDIS_PORT     string
+)
 
-func Config() DBConfig {
+func InitConfig() {
 	//读取配置的viper工具定义
 	viper.SetConfigName("config")
 	viper.SetConfigType("toml")
 	viper.AddConfigPath("./conf")
-
-	//读取配置失败处理
+	viper.SetDefault("redis.port", 6381)
 	err := viper.ReadInConfig()
 	if err != nil {
-		log.Fatalf("read config failed: %v", err)
+		log.Fatal("read config failed: %v", err)
 	}
 
-	//读取
-	var c DBConfig
-	viper.Unmarshal(&c)
-	fmt.Println(c.MySQL)
+	APP_NAME = viper.GetString("app_name")
+	LOG_LEVEL = viper.GetString("log_level")
 
-	return c
+	// fmt.Println(APP_NAME)
+	// fmt.Println(LOG_LEVEL)
+	MYSQL_IP = viper.GetString("mysql.ip")
+	MYSQL_PORT = viper.GetString("mysql.port")
+	MYSQL_USER = viper.GetString("mysql.user")
+	MYSQL_PASSWORD = viper.GetString("mysql.password")
+	MYSQL_DATABASE = viper.GetString("mysql.database")
+
+	fmt.Println("mysql ip: ", viper.Get("mysql.ip"))
+	fmt.Println("mysql port: ", viper.Get("mysql.port"))
+	fmt.Println("mysql user: ", viper.Get("mysql.user"))
+	fmt.Println("mysql password: ", viper.Get("mysql.password"))
+	fmt.Println("mysql database: ", viper.Get("mysql.database"))
+
+	fmt.Println("redis ip: ", viper.Get("redis.ip"))
+	fmt.Println("redis port: ", viper.Get("redis.port"))
+
 }

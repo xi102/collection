@@ -12,11 +12,13 @@ var engine *xorm.Engine
 
 func InitDatabase() {
 	var err error
-	config := util.Config()
 
-	//用法：config.MySQL.host
-	connection := config.MySQL.user + ":" + config.MySQL.password + "@" + config.MySQL.host + "?charset=utf8"
-	fmt.Println("connection")
+	fmt.Println("orm得到的配置参数为", util.MYSQL_IP)
+	connection := util.MYSQL_USER + ":" + util.MYSQL_PASSWORD + "@tcp(" + util.MYSQL_IP + ":" + util.MYSQL_PORT + ")/xi102collection?=utf8"
+	// fmt.Println()
 	engine, err = xorm.NewEngine("mysql", connection)
+	if err != nil {
+		fmt.Println("xorm连接失败", err)
+	}
 
 }
