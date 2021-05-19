@@ -14,7 +14,7 @@
 import appMain from "./components/appMain.vue";
 export default {
   name: "Layout",
-  componets: {
+  components: {
     appMain,
   },
   computed: {
