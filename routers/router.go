@@ -28,6 +28,6 @@ func InitRouter() *gin.Engine {
 	router.Use(static.Serve("/", static.LocalFile("./frontend/dist", false)))
 
 	router.StaticFS("/files", http.Dir("./upload"))
-	router.POST("/upload/", v1.FileUpload)
+	router.POST("/api/v1/upload/", v1.FileUpload)
 	return router
 }
